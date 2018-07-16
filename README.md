@@ -3,8 +3,11 @@
 
 ## How To Install
 
-1. To install this plugin, clone this repository in the Packages folder of your Sublime Text 3 installation. 
+1. To install this plugin, clone this repository in the Packages folder of your Sublime Text 3 installation and rename the folder as CheatSheet. 
 Hint : You can open the Packages folder from "Preferences -> Browse Packages".
+```
+git clone https://github.com/gauravk-in/cheat.sh-sublime-plugin.git CheatSheet
+```
 2. Then using the Package Control plugin, install the missing dependencies. To do this, you must open the 
 Command Palette from "Tools -> Command Palette" and write "Package Control: Satisfy Dependencies". 
 3. You can open the console from "View -> Show Console" to check for any errors.
