@@ -8,7 +8,7 @@ extension_language_dict = {".py" : "python",".cpp" : "cpp",".c" : "c",".sh" : "b
 
 syntaxFile_language_dict = {"Packages/Python/Python.sublime-syntax": "python"}
 
-def getAnswer(language, query, recommendationNum = 0, withComments = False):
+def getAnswer(language, query, recommendationNum = 0, withComments = True):
     recommendationStr = ""
     if (recommendationNum > 0):
         recommendationStr = '/' + str(recommendationNum)
