@@ -14,17 +14,28 @@ Command Palette from "Tools -> Command Palette" and write "Package Control: Sati
 
 Meanwhile, we are working on publishing this plugin using Package Control, which will make it easy to install and update. Stay tuned for updates on this.
 
-## How to Use
+## Demos
 
-1. Open your source file. The extension of the source file should indicate the programming language (eg. .py for python).
-2. Write your query, eg. "append file". Select and press the key sequence to send request to "cht.sh". On Linux the key combination
-is "Ctrl + Shift + b". On MacOS, the key combination is "Cmd + b".
-3. The query will then be replaced by the code generated from "cht.sh".
+### Insert answer in editor
 
-### Demo
+1. Write your query string.
+2. Select the query string.
+3. Press "Cmd + Shift + B" to replace the selected query string by the answer generated from cht.sh.
 
-<p align="center">
-  <a href="http://www.youtube.com/watch?feature=player_embedded&v=cseFoBnu1_Q
-  " target="_blank"><img src="http://img.youtube.com/vi/cseFoBnu1_Q/0.jpg" 
-  alt="cheat.sh-sublime-plugin A Sublime Text 3 plugin for cht.sh" width="700" height="490" border="10" /></a>
-</p>
+![Preview](/contrib/cheat_demo_1.gif)
+
+### List top 3 answers in a new tab
+
+1. Press "Cmd + Shift + N" to launch the input panel in Sublime Text.
+2. Enter your query and press Enter.
+3. A new tab will be opened, and the top 3 best answers for the query will be listed in this page.
+
+![Preview](/contrib/cheat_demo_2.gif)
+
+### Another way to insert answer directly in the editor
+
+1. Press "Cmd + Shift + M" to launch the input panel in Sublime Text.
+2. Enter your query and press Enter.
+3. The answer will be pasted in the open editor.
+
+![Preview](/contrib/cheat_demo_3.gif)

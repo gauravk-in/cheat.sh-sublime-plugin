@@ -1,7 +1,14 @@
 [
 { 
-    "keys": ["super+b"],
+    "keys": ["super+shift+b"],
     "command": "cheat_sheet"
+},
+{ 
+    "keys": ["super+shift+n"],
+    "command": "cheat_sheet_multiple_suggestions"
+},
+{ 
+    "keys": ["super+shift+m"],
+    "command": "cheat_sheet_input_panel"
 }
 ]
-

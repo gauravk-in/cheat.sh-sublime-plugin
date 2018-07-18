@@ -2,6 +2,13 @@
 { 
     "keys": ["ctrl+shift+b"],
     "command": "cheat_sheet"
+},
+{ 
+    "keys": ["ctrl+shift+n"],
+    "command": "cheat_sheet_multiple_suggestions"
+},
+{ 
+    "keys": ["ctrl+shift+m"],
+    "command": "cheat_sheet_input_panel"
 }
 ]
-

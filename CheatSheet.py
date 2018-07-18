@@ -6,36 +6,88 @@ import re
 
 extension_language_dict = {".py" : "python",".cpp" : "cpp",".c" : "c",".sh" : "bash"}
 
-class CheatSheetCommand(sublime_plugin.TextCommand):
-    def print_save_file_error(self, edit):
-        for region in self.view.sel():
-            if not region.empty():
-                s = self.view.substr(region)
-                s = "!!! \n To use cheat.sh plugin, the file needs to be saved with an appopriate \n extension to indicate the programming language being used. (eg. .py, cpp etc) \n!!!"
-                self.view.replace(edit, region, s)
+syntaxFile_language_dict = {"Packages/Python/Python.sublime-syntax": "python"}
 
-    def print_unsupported_programming_language(self, edit, fileext):
-        for region in self.view.sel():
-            if not region.empty():
-                s = self.view.substr(region)
-                s = "!!! \n It seems that the programming language, as indicated by the extension \"" + fileext + "\" \n is not supported by cheat.sh plugin currently! Please contact the developer to include \n support for this programming langauge. \n!!!"
-                self.view.replace(edit, region, s)
+def getAnswer(language, query, recommendationNum = 0, withComments = False):
+    recommendationStr = ""
+    if (recommendationNum > 0):
+        recommendationStr = '/' + str(recommendationNum)
+    commentsStr = ""
+    if withComments == False:
+        commentsStr = "?Q"
+    requestStr = 'http://cht.sh/' + language  + '/' + query + recommendationStr + commentsStr + '?T'
+    return requests.get(requestStr).text
+
+class CheatSheetUtils:
+    def error_programming_language_unknown(self):
+        sublime.message_dialog("Cheat.sh plugin could not deduce the programming language.\n\nPlease save the file with an appropriate extension or set the syntax from the Command Palette (Cmd + Shift + p) and typing \"Set Syntax:\"")
+
+    def error_unsupported_programming_language(self):
+        sublime.message_dialog("Cheat.sh plugin does not seem to support this programming language.\n\nPlease contact the developer at gaurav@gauravk.in to include support for this programming language.")
+        
+    def getProgrammingLanguage(self):
+        fname = self.view.file_name()
+        if fname is not None:
+            filename, fileext = os.path.splitext(self.view.file_name());
+            if fileext in extension_language_dict:
+                return extension_language_dict[fileext]
+            else:
+                self.error_unsupported_programming_language()
+                return 
+        else:
+            syntaxFile = self.view.settings().get('syntax')
+            if syntaxFile in syntaxFile_language_dict:
+                return syntaxFile_language_dict[syntaxFile]
+            else:
+                if syntaxFile == 'Packages/Text/Plain text.tmLanguage':
+                    self.error_programming_language_unknown()
+                else:
+                    self.error_unsupported_programming_language()
+                return None
+
+class CheatSheetCommand(sublime_plugin.TextCommand, CheatSheetUtils):
+    def run(self, edit):
+        language = self.getProgrammingLanguage()
+        if language is not None:
+            for region in self.view.sel():
+                if not region.empty():
+                    s = self.view.substr(region)
+                    s = re.sub(r'\s+(?!\n)', r'+', s)
+                    self.view.replace(edit, region, getAnswer(language, s))
+
+class CheatSheetMultipleSuggestionsCommand(sublime_plugin.TextCommand, CheatSheetUtils):
+    def on_done(self, user_input):
+        language = self.getProgrammingLanguage()
+        if language is not None:
+            newView = self.view.window().new_file()
+            newView.settings().set('auto_indent', False)
+            newView.settings().set('word_wrap', False)
+            # newView.set_syntax_file(self.view.settings().get('syntax'))
+            sublime.active_window().focus_view(newView)
+            separator = '\n\n' + "-"*80 + '\n' + "-"*80 + '\n' + "-"*80 + '\n\n'
+            if sublime.active_window().active_view() == newView:
+                newView.run_command('insert', {"characters": getAnswer(language, user_input)})
+                newView.run_command('insert', {"characters": separator})
+                newView.run_command('insert', {"characters": getAnswer(language, user_input, 1)})
+                newView.run_command('insert', {"characters": separator})
+                newView.run_command('insert', {"characters": getAnswer(language, user_input, 2)})
 
     def run(self, edit):
-        fname = self.view.file_name()
-        if fname == None:
-            self.print_save_file_error(edit)
-            return
-        filename, fileext = os.path.splitext(self.view.file_name());
-        if fileext in extension_language_dict:
-            language = extension_language_dict[fileext]
-        else:
-            self.print_unsupported_programming_language(edit, fileext)
-            return
-        for region in self.view.sel():
-            if not region.empty():
-                s = self.view.substr(region)
-                s = re.sub(r'\s+(?!\n)', r'+', s)
-                r = requests.get('http://cht.sh/' + language  + '/' + s + '?T')
-                s = r.text
-                self.view.replace(edit, region, s)
+        self.view.window().show_input_panel("Cheat.sh", "", self.on_done, None, None)
+
+class CheatSheetInputPanelCommand(sublime_plugin.TextCommand, CheatSheetUtils):
+    def on_done(self, user_input):
+        language = self.getProgrammingLanguage()
+        if language is not None:
+            old_auto_indent_status = self.view.settings().get('auto_indent')
+            if (old_auto_indent_status == True):
+                self.view.settings().set('auto_indent', False)
+            self.view.run_command('insert', {"characters": getAnswer(language, user_input)})
+            if (old_auto_indent_status == True):
+                self.view.settings().set('auto_indent', True)
+
+    def run(self, edit):
+        self.view.window().show_input_panel("Cheat.sh", "", self.on_done, None, None)
+        
+
+
