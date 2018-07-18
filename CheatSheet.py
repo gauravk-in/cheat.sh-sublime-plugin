@@ -62,7 +62,7 @@ class CheatSheetMultipleSuggestionsCommand(sublime_plugin.TextCommand, CheatShee
             newView = self.view.window().new_file()
             newView.settings().set('auto_indent', False)
             newView.settings().set('word_wrap', False)
-            # newView.set_syntax_file(self.view.settings().get('syntax'))
+            newView.set_syntax_file(self.view.settings().get('syntax'))
             sublime.active_window().focus_view(newView)
             separator = '\n\n' + "-"*80 + '\n' + "-"*80 + '\n' + "-"*80 + '\n\n'
             if sublime.active_window().active_view() == newView:
