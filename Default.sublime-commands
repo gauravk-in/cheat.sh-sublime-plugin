@@ -1,0 +1,5 @@
+[
+    { "caption": "Cheat.sh: Cheat with comments", "command": "cheat_sheet" },
+    { "caption": "Cheat.sh: Cheat pallete with comments", "command": "cheat_sheet_pallete" },
+    { "caption": "Cheat.sh: Cheat without comments", "command": "cheat_sheet" }
+]

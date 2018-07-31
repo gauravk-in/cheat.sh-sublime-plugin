@@ -4,7 +4,32 @@ import requests
 import os
 import re
 
-extension_language_dict = {".py" : "python",".cpp" : "cpp",".c" : "c",".sh" : "bash"}
+extension_language_dict = {
+    ".py" : "python",
+    ".cpp" : "cpp",
+    ".hpp" : "cpp",
+    ".c" : "c",
+    ".h" : "cpp",
+    ".sh" : "bash",
+    ".css" : "css",
+    ".html" : "html",
+    ".htm" : "html",
+    ".xhtml" : "html",
+    ".jhtml" : "html",
+    ".jsp" : "java",
+    ".jspx" : "java",
+    ".wss" : "java",
+    ".do" : "java",
+    ".action" : "java",
+    ".js" : "javascript",
+    ".pl" : "perl",
+    ".php" : "php",
+    ".php4" : "php",
+    ".php3" : "php",
+    ".phtml" : "php",
+    ".rb" : "ruby",
+    ".swift" : "swift",
+}
 
 syntaxFile_language_dict = {"Packages/Python/Python.sublime-syntax": "python"}
 
