@@ -39,3 +39,8 @@ Meanwhile, we are working on publishing this plugin using Package Control, which
 3. The answer will be pasted in the open editor.
 
 ![Preview](/contrib/cheat_demo_3.gif)
+
+### Note
+
+1. On Windows and Linux the "Cmd" key is replaced by "Ctrl" key.
+2. To get answers without comments, use "Alt" key in place of "Cmd" or "Ctrl".
