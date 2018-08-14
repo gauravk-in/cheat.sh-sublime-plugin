@@ -1,14 +1,50 @@
 [
 { 
     "keys": ["super+shift+b"],
-    "command": "cheat_sheet"
+    "command": "cheat_sheet",
+    "args": 
+    {
+        "with_comments": true
+    }
+},
+{ 
+    "keys": ["alt+shift+b"],
+    "command": "cheat_sheet",
+    "args": 
+    {
+        "with_comments": false
+    }
 },
 { 
     "keys": ["super+shift+n"],
-    "command": "cheat_sheet_multiple_suggestions"
+    "command": "cheat_sheet_multiple_suggestions",
+    "args": 
+    {
+        "with_comments": true
+    }
+},
+{ 
+    "keys": ["alt+shift+n"],
+    "command": "cheat_sheet_multiple_suggestions",
+    "args": 
+    {
+        "with_comments": false
+    }
 },
 { 
     "keys": ["super+shift+m"],
-    "command": "cheat_sheet_input_panel"
+    "command": "cheat_sheet_input_panel",
+    "args": 
+    {
+        "with_comments": true
+    }
+},
+{ 
+    "keys": ["alt+shift+m"],
+    "command": "cheat_sheet_input_panel",
+    "args": 
+    {
+        "with_comments": false
+    }
 }
 ]

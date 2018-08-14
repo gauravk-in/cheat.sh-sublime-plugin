@@ -1,5 +1,8 @@
 [
-    { "caption": "Cheat.sh: Cheat with comments", "command": "cheat_sheet" },
-    { "caption": "Cheat.sh: Cheat pallete with comments", "command": "cheat_sheet_pallete" },
-    { "caption": "Cheat.sh: Cheat without comments", "command": "cheat_sheet" }
+    { "caption": "Cheat.sh: Insert answer with comments", "command": "cheat_sheet_input_panel", "args": {"with_comments": true}},
+    { "caption": "Cheat.sh: Insert answer without comments", "command": "cheat_sheet_input_panel", "args": {"with_comments": false}},
+    { "caption": "Cheat.sh: Replace query by answer with comments", "command": "cheat_sheet", "args": {"with_comments": true} },
+    { "caption": "Cheat.sh: Replace query by answer without comments", "command": "cheat_sheet", "args": {"with_comments": false} },
+    { "caption": "Cheat.sh: Show multiple answers with comments", "command": "cheat_sheet_multiple_suggestions", "args": {"with_comments": true} },
+    { "caption": "Cheat.sh: Show multiple answers without comments", "command": "cheat_sheet_multiple_suggestions", "args": {"with_comments": false} },
 ]
