@@ -16,29 +16,29 @@ Meanwhile, we are working on publishing this plugin using Package Control, which
 
 ## Demos
 
-### Insert answer in editor
+### Replace the query text with answer in editor
 
 1. Write your query string.
 2. Select the query string.
-3. Press "Cmd + Shift + B" to replace the selected query string by the answer generated from cht.sh.
+3. Press "Cmd + cr" to replace the selected query string by the answer generated from cht.sh.
 
-![Preview](/contrib/cheat_demo_1.gif)
+![Preview](/contrib/cr.gif)
 
 ### List top 3 answers in a new tab
 
-1. Press "Cmd + Shift + N" to launch the input panel in Sublime Text.
+1. Press "Cmd + cs" to launch the input panel in Sublime Text.
 2. Enter your query and press Enter.
 3. A new tab will be opened, and the top 3 best answers for the query will be listed in this page.
 
-![Preview](/contrib/cheat_demo_2.gif)
+![Preview](/contrib/cs.gif)
 
 ### Another way to insert answer directly in the editor
 
-1. Press "Cmd + Shift + M" to launch the input panel in Sublime Text.
+1. Press "Cmd + ci" to launch the input panel in Sublime Text.
 2. Enter your query and press Enter.
 3. The answer will be pasted in the open editor.
 
-![Preview](/contrib/cheat_demo_3.gif)
+![Preview](/contrib/ci.gif)
 
 ### Note
 
