@@ -16,15 +16,7 @@ Meanwhile, we are working on publishing this plugin using Package Control, which
 
 ## Demos
 
-### Replace the query text with answer in editor
-
-1. Write your query string.
-2. Select the query string.
-3. Press "Cmd + cr" to replace the selected query string by the answer generated from cht.sh.
-
-![Preview](/contrib/cr.gif)
-
-### List top 3 answers in a new tab
+### Show top 3 answers in a new tab
 
 1. Press "Cmd + cs" to launch the input panel in Sublime Text.
 2. Enter your query and press Enter.
@@ -32,13 +24,21 @@ Meanwhile, we are working on publishing this plugin using Package Control, which
 
 ![Preview](/contrib/cs.gif)
 
-### Another way to insert answer directly in the editor
+### Insert answer directly in the editor
 
 1. Press "Cmd + ci" to launch the input panel in Sublime Text.
 2. Enter your query and press Enter.
 3. The answer will be pasted in the open editor.
 
 ![Preview](/contrib/ci.gif)
+
+### Replace the query text with answer in editor
+
+1. Write your query string.
+2. Select the query string.
+3. Press "Cmd + cr" to replace the selected query string by the answer generated from cht.sh.
+
+![Preview](/contrib/cr.gif)
 
 ### Note
 
