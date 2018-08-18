@@ -1,6 +1,6 @@
 [
 { 
-    "keys": ["super+shift+b"],
+    "keys": ["super+shift+r"],
     "command": "cheat_sheet",
     "args": 
     {
@@ -8,7 +8,7 @@
     }
 },
 { 
-    "keys": ["alt+shift+b"],
+    "keys": ["alt+shift+r"],
     "command": "cheat_sheet",
     "args": 
     {
@@ -16,7 +16,7 @@
     }
 },
 { 
-    "keys": ["super+shift+n"],
+    "keys": ["super+shift+s"],
     "command": "cheat_sheet_multiple_suggestions",
     "args": 
     {
@@ -24,7 +24,7 @@
     }
 },
 { 
-    "keys": ["alt+shift+n"],
+    "keys": ["alt+shift+s"],
     "command": "cheat_sheet_multiple_suggestions",
     "args": 
     {
@@ -32,7 +32,7 @@
     }
 },
 { 
-    "keys": ["super+shift+m"],
+    "keys": ["super+shift+i"],
     "command": "cheat_sheet_input_panel",
     "args": 
     {
@@ -40,7 +40,7 @@
     }
 },
 { 
-    "keys": ["alt+shift+m"],
+    "keys": ["alt+shift+i"],
     "command": "cheat_sheet_input_panel",
     "args": 
     {

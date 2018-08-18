@@ -72,7 +72,7 @@ class CheatSheetMultipleSuggestionsCommand(sublime_plugin.TextCommand, CheatShee
 
     def run(self, edit, with_comments):
         self.show_result_with_comments = with_comments
-        input_panel_prompt = "Cheat.sh"
+        input_panel_prompt = "Cheat.sh : Show multiple suggestions"
         if with_comments:
             input_panel_prompt = input_panel_prompt + " (with comments) :"
         else:
